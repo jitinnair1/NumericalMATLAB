@@ -29,5 +29,5 @@ fprintf('     step_size      central_difference_values      error\n')
 disp(L);
 
 %Plotting
-loglog(h, err), xlabel('Step Size'), ylabel('Error')
+loglog(h, err), xlabel('Step Size'), ylabel('Error') %%plot log-log plot
 title('Plot of error with varying time steps')
