@@ -1,5 +1,4 @@
 clear RoundoffErrorVariation;
-format long;
 N=11;
 central_diff=zeros(1, N);
 true_diff=zeros(1, N);
