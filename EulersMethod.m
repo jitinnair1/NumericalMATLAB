@@ -1,10 +1,7 @@
 % Direct Computation
 clear EulersMethod;
-N=50;
-m=68.1;
-c=0.25;
-g=9.81;
-t=1:N;
+N=50; m=68.1; c=0.25; g=9.81; t=1:N;
+
 v=zeros(1,N);
 for i=1:N
     v(i)=sqrt(g*m/c)*tanh(sqrt(g*c/m)*i);
