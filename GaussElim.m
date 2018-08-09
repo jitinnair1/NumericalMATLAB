@@ -41,6 +41,5 @@ sum=sum + Ab(i-1, i)*x(i,1);
 end
 end
 
-disp(A)
-disp(b)
+disp([A b'])
 disp(x)
