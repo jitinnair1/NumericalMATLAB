@@ -1,10 +1,10 @@
 function [gauss_total, cram_multiply] = StepCounter(num_col, N)
 
+%% Initialization
 format short
 gauss_add=0;
 gauss_multiply=0;
 cram_multiply=0;
-
 
 %% Populate vectors A and b using Random numbers
 
@@ -65,7 +65,7 @@ for i=2:num_col-1
     R=[A(:, 1:i-1) b' A(:, i+1:num_col)];
     y(i)=det(R)/dA;
     cram_multiply=cram_multiply+1;
-    cram_multiply=cram_multiply+factorial(num_col-1);
+    cram_multiply=cram_multiply+factorial(num_col);
     cram_multiply=cram_multiply+num_col;
 end
 
@@ -74,7 +74,7 @@ R_end=[A(:, 1:num_col-1) b'];
 y(1)=det(R1)/dA;
 y(num_col)=det(R_end)/dA;
 cram_multiply=cram_multiply+2;
-cram_multiply=cram_multiply+3*factorial(num_col-1);
+cram_multiply=cram_multiply+3*factorial(num_col);
 cram_multiply=cram_multiply+3*num_col;
 
 end
