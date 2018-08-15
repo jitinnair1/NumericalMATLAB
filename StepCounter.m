@@ -11,7 +11,7 @@ cram_multiply=0;
 % Generate A from random no. combination
 row=zeros(num_col, num_col);
 for i=1:num_col
-row(i,:)=randperm(N,num_col);
+    row(i,:)=randperm(N,num_col);
 end
 
 % Generate b from random no. combination
@@ -38,18 +38,18 @@ x = zeros(num_col, 1);
 
 sum=0;
 for i=num_col:-1:1
-j=i:num_col;
-x(i, 1)=(Ab(i,num_col+1)-sum)/Ab(i, i);
-gauss_add=gauss_add+1;
-gauss_multiply=gauss_multiply+1;
-if(i>1)
-sum=0;
-for p=1:numel(j)
-sum=sum+x(j(p))*Ab(i-1,j(p));
-gauss_add=gauss_add+1;
-gauss_multiply=gauss_multiply+1;
-end
-end
+    j=i:num_col;
+    x(i, 1)=(Ab(i,num_col+1)-sum)/Ab(i, i);
+    gauss_add=gauss_add+1;
+    gauss_multiply=gauss_multiply+1;
+    if(i>1)
+        sum=0;
+        for p=1:numel(j)
+            sum=sum+x(j(p))*Ab(i-1,j(p));
+            gauss_add=gauss_add+1;
+            gauss_multiply=gauss_multiply+1;
+        end
+    end
 end
 
 gauss_total=gauss_add+gauss_multiply;
