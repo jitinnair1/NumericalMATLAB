@@ -65,8 +65,7 @@ for i=2:num_col-1
     R=[A(:, 1:i-1) b' A(:, i+1:num_col)];
     y(i)=det(R)/dA;
     cram_multiply=cram_multiply+1;
-    cram_multiply=cram_multiply+factorial(num_col);
-    cram_multiply=cram_multiply+num_col;
+    cram_multiply=cram_multiply+num_col*factorial(num_col);
 end
 
 R1=[b' A(:, 2:num_col)];
@@ -74,8 +73,7 @@ R_end=[A(:, 1:num_col-1) b'];
 y(1)=det(R1)/dA;
 y(num_col)=det(R_end)/dA;
 cram_multiply=cram_multiply+2;
-cram_multiply=cram_multiply+3*factorial(num_col);
-cram_multiply=cram_multiply+3*num_col;
+cram_multiply=cram_multiply+3*num_col*factorial(num_col);
 
 end
 
