@@ -1,3 +1,5 @@
+clear all
+figure('position', [0, 0, 1000, 800])
 N=20;
 table_calc=zeros(N-2, 2);
 for i=3:N
