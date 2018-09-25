@@ -9,9 +9,9 @@ subplot(1, 2, 1)
 plot(table_calc, '*')
 set(gca, 'YScale', 'log')
 pbaspect([1 1 1])
-title('Results from code')
-ylabel('No. of computations')
-xlabel('System Size')
+title('Results from code', 'fontsize', 24)
+ylabel('No. of computations', 'fontsize', 18)
+xlabel('System Size', 'fontsize', 18)
 legend('Gauss', 'Cramer')
 hold on
 x=3:N;
@@ -26,7 +26,30 @@ subplot(1, 2, 2)
 plot(x, cramer_analytical, '*')
 set(gca, 'YScale', 'log')
 pbaspect([1 1 1])
-title('Results from analytical solution')
-ylabel('No. of computations') 
-xlabel('System Size')
+title('Results from analytical solution', 'fontsize', 24)
+ylabel('No. of computations','fontsize', 18) 
+xlabel('System Size','fontsize', 18)
 legend('Gauss', 'Cramer')
+
+%% Compare Pairwise
+
+clf;
+
+subplot(1, 2, 1)
+plot(x, gauss_analytical','r*', x, table_calc(3:end,1), 'b*')
+set(gca, 'YScale', 'log')
+pbaspect([1 1 1])
+title('Gauss - Analytical vs. Code', 'fontsize', 24)
+ylabel('No. of computations', 'fontsize', 18)
+xlabel('System Size', 'fontsize', 18)
+legend('Analytical', 'Code')
+hold on
+
+subplot(1, 2, 2)
+plot(x, cramer_analytical','r*', x, table_calc(3:end,2), 'b*')
+set(gca, 'YScale', 'log')
+pbaspect([1 1 1])
+title('Cramer - Analytical vs. Code', 'fontsize', 24)
+ylabel('No. of computations','fontsize', 18) 
+xlabel('System Size','fontsize', 18)
+legend('Analytical', 'Code')
